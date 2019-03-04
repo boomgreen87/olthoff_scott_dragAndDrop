@@ -48,7 +48,7 @@
 
 			//Prevents multiple pieces from being in the same drop zone
 			if (zone.children.length > 0) {
-				return false;
+				return;
 			}
 
 			let piece = e.dataTransfer.getData("text/plain");

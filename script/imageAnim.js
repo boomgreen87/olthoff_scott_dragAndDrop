@@ -46,8 +46,9 @@
 			e.preventDefault();
 			console.log("You dropped somethin on me!");
 
+			//Prevents multiple pieces from being in the same drop zone
 			if (zone.children.length > 0) {
-				return false;
+				return;
 			}
 
 			let piece = e.dataTransfer.getData("text/plain");
@@ -57,6 +58,9 @@
 
 	function resetPuzzlePieces() {
 		// Swap out all of the images when clicking on a bottom button
+		dropZones.forEach(zone =>{
+			zone.removeChild(zone.children[0]);
+			});
 		
 		// Empty the thumbnail container
 		piecesBoard.innerHTML = "";

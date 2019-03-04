@@ -46,6 +46,10 @@
 			e.preventDefault();
 			console.log("You dropped somethin on me!");
 
+			if (zone.children.length > 0) {
+				return false;
+			}
+
 			let piece = e.dataTransfer.getData("text/plain");
 			e.target.appendChild(document.querySelector(`#${piece}`));
 		});

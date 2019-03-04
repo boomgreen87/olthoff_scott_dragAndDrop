@@ -58,9 +58,11 @@
 
 	function resetPuzzlePieces() {
 		// Swap out all of the images when clicking on a bottom button
-		dropZones.forEach(zone =>{
-			zone.removeChild(zone.children[0]);
-			});
+		dropZones.forEach(zone => {
+			if(zone.children.length > 0) {
+				zone.removeChild(zone.children[0]);
+			}
+		});
 		
 		// Empty the thumbnail container
 		piecesBoard.innerHTML = "";
